@@ -1,4 +1,6 @@
-# Segment’s Frictionless Signup
+# Frictionless Signup
+<p style="text-align:center"><img src="http://g.recordit.co/bvOrncPN5n.gif"></p>
+
 ## Overview
 Frictionless Signup is Segment’s open-source project to enable the auto-population of form fields with enriched data from Clearbit and Madkudu.
 
