@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+<!--
+To prefill with the correct data,
+just add the data-clearbit attibute
+with the right endpoint.
+
+If you want to map to custom range, add data-mapping
+and set it to true. Default = false. Only role and
+employees are mapped by default.
+
+To customize the role select:
+- Add your options
+- Set your custom currentInput.value in customMappingRole()
+ -->
+
+<form action="">
+  <input type="email" data-clearbit="person.email">
+  <input type="text" data-clearbit="person.name.givenName">
+  <input type="text" data-clearbit="company.id">
+  <input type="text" data-clearbit="company.metrics.employees" data-mapping="true">
+  <select data-clearbit="person.employment.role">
+    <option value="customer">Customer Success</option>
+    <option value="cmo">CMO</option>
+    <option value="ceo">CEO</option>
+  </select>
+</form>
+
+<script src="fsu.js"></script>
+</body>
+</html>
