@@ -75,7 +75,7 @@ Using the Node library by clearbit and calling `clearbit.Enrichment.find({ email
 
 
 ## Contributor list
-Thank you  [Guillaume Cabane](https://github.com/guillaumecabane), [Gilles Bertaux](https://github.com/gillesbertaux), [Ben Hoffman](https://github.com/benjaminhoffman)
+Thank you  [Guillaume Cabane](https://github.com/guillaumecabane),[Yanael Barbier](https://github.com/st3w4r), [Gilles Bertaux](https://github.com/gillesbertaux), [Ben Hoffman](https://github.com/benjaminhoffman)
 
 ## Credits, Inspiration, Alternatives
-This project was originally inspired by a similar project of Guillaume Cabane while he was CMO of Mention in Paris. At Segment, in his capacity as Head of Growth, Guillaume used Frictionless Signup to increase signup conversions and high-quality leads. 
+This project was originally inspired by a similar project of Guillaume Cabane while he was CMO of Mention in Paris. The project was led by Gilles Bertaux and developed by Yanael Barbier. At Segment, in his capacity of VP Growth, Guillaume used Frictionless Signup to increase signup conversions and high-quality leads.  
