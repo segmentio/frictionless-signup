@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+<!--
+To prefill with the correct data,
+just add the frictionless attibute
+with the right endpoint.
+
+If you want to map to custom range, add data-mapping
+and set it to true. Default = false. Only role and
+employees are mapped by default.
+
+To customize the role select:
+- Add your options
+- Set your custom currentInput.value in customMappingRole()
+ -->
+
+<form action="">
+  <input type="email" frictionless="email">
+  <input type="text" frictionless="person.name.givenName">
+  <input type="text" frictionless="person.name.familyName">
+  <input type="text" frictionless="person.name.fullName">
+  <input type="text" frictionless="company.name">
+  <input type="text" frictionless="company.domain">
+  <input type="text" frictionless="company.metrics.employees" frictionless-mapping="customMappingSize">
+  <input type="checkbox" frictionless="company.tags" frictionless-mapping="requestADemo" value="demo"> Request a demo
+  <select frictionless="person.employment.role" frictionless-mapping="customMappingRole">
+    <option value="customer">Customer Success</option>
+    <option value="cmo">CMO</option>
+    <option value="ceo">CEO</option>
+	<option value="design">Design</option>
+	<option value="tech">Tech</option>
+	<option value="sales">Sales</option>
+	<option value="cto">CTO</option>
+  </select>
+</form>
+
+<!-- <script src="fsu.js"></script> -->
+<script src="bundle.js"></script>
+<script type="text/javascript">
+
+function requestADemo(val, selector) {
+	var res;
+	if (selector) {
+		if (val.includes('SAAS')) {
+			selector.checked = true
+		}
+	}
+}
+
+function customMappingRole(val) {
+	var res = null;
+	if (val.includes('customer')) {
+		res = "customer";
+	}
+	else if (val.includes('design')) {
+		res = "design";
+	}
+	else if (val.includes('tech')) {
+		res = "tech";
+	}
+	else if (val.includes('sales')) {
+		res = "sales";
+	}
+	else if (val.includes('marketing')) {
+		res = "cmo";
+	}
+	else if (val.includes('engineering')) {
+		res = "cto";
+	}
+	else if (val.includes('ceo')) {
+		res = "ceo";
+	}
+	return res;
+}
+
+function customMappingSize(val) {
+	var res;
+	if (val >= 0 && val < 5) {
+		res = "1-4 employees";
+	}
+	else if (val >= 5 && val < 10) {
+		res = "5-9 employees";
+	}
+	else if (val >= 10 && val < 50) {
+		res = "10-49 employees";
+	}
+	else if (val >= 50 && val < 100) {
+		res = "50-99 employees";
+	}
+	else if (val >= 100 && val < 1000) {
+		res = "100-999 employees";
+	}
+	else if (val >= 1000) {
+		res = "1000+ employees";
+	}
+	else {
+		res = val
+	}
+	return res;
+}
+</script>
+</body>
+</html>
