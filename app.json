@@ -1,0 +1,34 @@
+{
+    "name": "Friction Less Signup Backend",
+    "description": "An API to call clearbit an return the payload",
+    "repository": "https://github.com/st3w4r/frictionless-signup/tree/backend",
+    "logo": "https://s3-us-west-2.amazonaws.com/segment-app-staging-assets/app/3.114.0-138-gc249e5a/logos/segment-icon.svg",
+    "website": "https://segment.com/frictionless-signup#getstarted",
+    "keywords": [
+        "frictionless",
+        "signup",
+        "segment",
+        "clearbit",
+        "madkudu",
+        "node",
+        "express"
+    ],
+    "env": {
+        "CLEARBIT_API_KEY": {
+            "description": "Your Clearbit Secret API Key",
+            "required": true
+        },
+        "SEGMENT_API_KEY": {
+            "description": "Your Segment API Key",
+            "required": false
+        },
+        "MADKUDU_API_KEY": {
+            "description": "Your MadKudu API Key",
+            "required": false
+        },
+        "DOMAIN": {
+            "description": "Your domain where the frictionless will be use",
+            "required": true
+        }
+    }
+}
