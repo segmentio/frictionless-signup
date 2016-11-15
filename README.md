@@ -13,7 +13,7 @@ The purpose of Frictionless Signup is to reduce the amount of effort in submitti
 You can see the form in action [here](#).
 
 ## Prerequisites
-You will need a Segment account, a Clearbit account, and a Madkudu account for this.
+You will need a [Segment account](https://segment.com/signup), a [Clearbit account](https://dashboard.clearbit.com/signup), and a [Madkudu account](app.madkudu.com/signup?plan=frictionless) for this.
 
 We also advise reading this How-To Guide as a more complete walkthrough of this project at Segment.
 
@@ -29,7 +29,6 @@ We also advise reading this How-To Guide as a more complete walkthrough of this 
 **Step 5:** Prefill remaining form fields with response payload from Clearbit
 
 ## How to run locally
-
 1. In a terminal, go to 'backend' directory and run `npm install` there.
 2. Run `CLEARBIT_API_KEY=xxx MADKUDU_API_KEY=yyy node app.js` and keep this terminal open: you're now running a proxy server running on local using port 3000. It will relay the calls from your webpage to Clearbit and MadKudu's API services.
 3. Open another terminal, go to the 'front' directory, and do a `npm install`.

@@ -79,9 +79,11 @@ FrictionlessSignup.prototype.getEmail = function () {
 FrictionlessSignup.prototype.callApi = function () {
 	console.log('Call Api');
 
-	this.api.callServer((res) => {
+	this.api.callServer(this.data_form.email,
+		(res) => {
 		this.mapData(res)
-	}, this.data_form.email)
+		this.show_request_demo_to_VIPs(res)
+	})
 
 }
 
@@ -91,6 +93,25 @@ FrictionlessSignup.prototype.mapData = function (data) {
 	this.data_form = this.mapper.mapData(this.data_form, data)
 
 	this.prefill()
+}
+
+FrictionlessSignup.prototype.show_request_demo_to_VIPs = function (data) {
+	console.log('Get customer fit segment from MadKudu');
+	// make an API call to your MadKudu api proxy
+	this.api.callMadKudu(data, (err, res) => {
+		if (err) {
+			return console.error('Error fetching customer fit from MadKudu: ' + err);
+		}
+		// display "request a demo" section if customer fit is good or very good
+		if (res.customer_fit && ['good', 'very good'].indexOf(res.customer_fit.segment) > -1) {
+			console.log('Show request demo section.');
+			this.display.show_request_demo();
+		}
+		else {
+			console.log('Hide request demo section.');
+			this.display.hide_request_demo();
+		}
+	});
 }
 
 FrictionlessSignup.prototype.prefill = function () {

@@ -3,7 +3,7 @@ var Api = function () {
 
 }
 
-Api.prototype.callServer = function (callback, email) {
+Api.prototype.callServer = function (email, callback) {
 
 	console.log('Call Server');
 	var request = new XMLHttpRequest();
@@ -36,6 +36,38 @@ Api.prototype.callClearbit = function () {
 
 Api.prototype.callSegment = function () {
 
+}
+
+Api.prototype.callMadKudu = function (lead_information, callback) {
+	const MADKUDU_PREDICTION_API_URL = 'http://localhost:3000/madkudu/predict';
+
+	console.log('Call MadKudu API');
+	var request = new XMLHttpRequest();
+
+	const post_data = JSON.stringify(lead_information);
+
+	request.open('POST', MADKUDU_PREDICTION_API_URL, true);
+	request.setRequestHeader('Content-type', 'application/json');
+
+	request.onreadystatechange = function () {
+	    if (request.readyState == 4 && request.status == 200) {
+				var json_response = null;
+				try {
+					json_response = JSON.parse(request.responseText)
+				}
+				catch(err) {
+					return callback('Could not read MadKudu\'s API response.')
+				}
+				callback(null, json_response);
+	    }
+	}
+
+	request.onerror = function(err) {
+		console.log('Connection error while contacting MadKudu api.');
+		callback(err);
+	};
+
+	request.send(post_data);
 }
 
 module.exports = function () {
