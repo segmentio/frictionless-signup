@@ -32,7 +32,7 @@ FrictionlessSignup.prototype.setEvents = function () {
 
 	})
 
-	// Event listener
+	// On event "focus out", get email field + value
 	addEventListener('email focusout', () => {
 		console.log('Email event focusout');
 
@@ -45,6 +45,7 @@ FrictionlessSignup.prototype.setEvents = function () {
 
 }
 
+// When email available, check if valid
 FrictionlessSignup.prototype.emailAvailable = function () {
 
 	if (this.helper.checkEmail(this.data_form.email) === true) {
@@ -55,9 +56,9 @@ FrictionlessSignup.prototype.emailAvailable = function () {
 	}
 }
 
-
+// Get all fields from form
 FrictionlessSignup.prototype.getForm = function () {
-	console.log('Get From');
+	console.log('Get Form');
 
 	this.data_form = this.display.getAllFields()
 }

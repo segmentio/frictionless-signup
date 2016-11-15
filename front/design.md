@@ -1,14 +1,22 @@
-# DESIGN
+# Installation
+
+Run `npm install`
+Run `npm install -g browserify`
+
+Add `<script src="bundle.js"></script>` on `index.html`
+
+Run `browserify index.js -o bundle.js` to compile a new `bundle.js`.
 
 # HTML Side
 
-Add on the input field `data-frictionless=email`
+Add on the input field `frictionless="email"`
+
 Mapping Clearbit data on HTML side
 	`person.email`
 	`person.name`
 Or map the data on JS side.
 
-Custom mapping `data-mapping="true"` default false
+Custom mapping `frictionless-mapping="true"` default false
 
 Gestion:
 	- Field

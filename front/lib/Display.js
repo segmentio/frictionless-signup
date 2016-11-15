@@ -4,8 +4,12 @@
 */
 
 var Display = function () {
-	this.frictionlessSelectos = {}
+	this.frictionlessSelectors = {}
 }
+
+/*
+* Get the email in params
+*/
 
 Display.prototype.getUrlParameter = function (sParam) {
 	var sPageURL = decodeURIComponent(window.location.search.substring(1)),
@@ -22,12 +26,20 @@ Display.prototype.getUrlParameter = function (sParam) {
 	}
 }
 
+/*
+* Get data in a field
+*/
+
 Display.prototype.getDataField = function (selector) {
 
 	var data = this.fieldIsEmpty(selector) === true ? null : selector.value
 
 	return data
 }
+
+/*
+* Get the key (clearbit endpoint wanted) in the data attributes
+*/
 
 Display.prototype.getKeyField = function (selector) {
 
@@ -36,6 +48,10 @@ Display.prototype.getKeyField = function (selector) {
 	return key
 }
 
+/*
+* Get the mapping key in the data attributes
+*/
+
 Display.prototype.getKeyFieldMapping = function (selector) {
 
 	var key = selector.getAttribute('frictionless-mapping')
@@ -43,11 +59,15 @@ Display.prototype.getKeyFieldMapping = function (selector) {
 	return key
 }
 
+/*
+* Search a selector with a specific key/name
+*/
+
 Display.prototype.getSelectorWithName = function (name) {
 
-	for (var i = 0; i < this.frictionlessSelectos.length; i++) {
+	for (var i = 0; i < this.frictionlessSelectors.length; i++) {
 
-		var selector = this.frictionlessSelectos[i];
+		var selector = this.frictionlessSelectors[i];
 		var key = selector.getAttribute('frictionless')
 
 		if (key === name)
@@ -56,6 +76,10 @@ Display.prototype.getSelectorWithName = function (name) {
 
 	return null
 }
+
+/*
+* Get a custom mapping key
+*/
 
 Display.prototype.customMapper = function (key, value, selector) {
 	var res = null;
@@ -66,6 +90,10 @@ Display.prototype.customMapper = function (key, value, selector) {
 		console.log('You need to create a function in the main file with this name: ', key);
 	return res
 }
+
+/*
+* Set the field value according to mapper or if field is empty
+*/
 
 Display.prototype.setDataField = function (selector, value) {
 
@@ -78,6 +106,10 @@ Display.prototype.setDataField = function (selector, value) {
 		selector.value = value
 	}
 }
+
+/**
+* Check if field is empty (returns bool)
+*/
 
 Display.prototype.fieldIsEmpty = function (selector) {
 	var empty = true;
@@ -95,12 +127,12 @@ Display.prototype.getAllFields = function () {
 
 	var frictionlessData = {};
 
-	this.frictionlessSelectos = document.querySelectorAll('[frictionless]')
+	this.frictionlessSelectors = document.querySelectorAll('[frictionless]')
 
-	for (var i = 0; i < this.frictionlessSelectos.length; i++) {
+	for (var i = 0; i < this.frictionlessSelectors.length; i++) {
 
-		var key = this.getKeyField(this.frictionlessSelectos[i])
-		var data = this.getDataField(this.frictionlessSelectos[i])
+		var key = this.getKeyField(this.frictionlessSelectors[i])
+		var data = this.getDataField(this.frictionlessSelectors[i])
 
 		frictionlessData[key] = data;
 	}
@@ -114,9 +146,9 @@ Display.prototype.getAllFields = function () {
 
 Display.prototype.setAllFields = function (data_form) {
 
-	for (var i = 0; i < this.frictionlessSelectos.length; i++) {
+	for (var i = 0; i < this.frictionlessSelectors.length; i++) {
 
-		var selector = this.frictionlessSelectos[i]
+		var selector = this.frictionlessSelectors[i]
 		var key = this.getKeyField(selector)
 		var data = this.getDataField(selector)
 
@@ -131,17 +163,16 @@ Display.prototype.setAllFields = function (data_form) {
 
 Display.prototype.setAllEmitter = function () {
 
-	for (var i = 0; i < this.frictionlessSelectos.length; i++) {
+	for (var i = 0; i < this.frictionlessSelectors.length; i++) {
 
-		var field = this.frictionlessSelectos[i];
+		var field = this.frictionlessSelectors[i];
 
 		this.setEmitter(field);
 	}
 };
 
-
 /**
-* Add an listener on all frictionlessSelectos, to autofill when the data is available
+* Add an listener on all frictionlessSelectors, to autofill when the data is available
 */
 
 Display.prototype.setListenerSelector = function (selector, name, func) {
