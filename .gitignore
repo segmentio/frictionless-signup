@@ -48,6 +48,9 @@ Thumbs.db
 ################
 /public/dist/**
 /front/bundle.js
+/front/bundle_babel.js
+/front/bundle_babel.js.map
+/front/bundle.min.js
 
 # Compiled config #
 ###################

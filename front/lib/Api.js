@@ -17,7 +17,7 @@ Api.prototype.callServer = function (email, callback) {
 
 	request.onload = function() {
 		if (request.status >= 200 && request.status < 400) {
-			res = JSON.parse(request.responseText);
+			var res = JSON.parse(request.responseText);
 			callback(res);
 		} else {
 			console.log('error API');
