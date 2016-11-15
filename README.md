@@ -28,7 +28,7 @@ We also advise reading this How-To Guide as a more complete walkthrough of this 
 
 **Step 5:** Prefill remaining form fields with response payload from Clearbit
 
-# How to run locally
+## How to run locally
 
 1. In a terminal, go to 'backend' directory and run `npm install` there.
 2. Run `CLEARBIT_API_KEY=xxx MADKUDU_API_KEY=yyy node app.js` and keep this terminal open: you're now running a proxy server running on local using port 3000. It will relay the calls from your webpage to Clearbit and MadKudu's API services.
