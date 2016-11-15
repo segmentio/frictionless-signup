@@ -1,7 +1,7 @@
 {
-  "name": "frictionless-signup-backend",
+  "name": "Frictionless Signup with Segment & Clearbit",
   "version": "1.0.0",
-  "description": "",
+  "description": "Increase conversion rates by 20%+ across your signup forms with Frictionless Signup Forms & Enrichment",
   "main": "index.js",
   "scripts": {
     "test": "npm test"

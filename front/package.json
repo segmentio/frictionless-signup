@@ -1,7 +1,7 @@
 {
-  "name": "fsos",
-  "version": "0.1.0",
-  "description": "FrictionlessSignup",
+  "name": "Frictionless Signup with Segment & Clearbit",
+  "version": "0.1.1",
+  "description": "Increase conversion rates by 20%+ across your signup forms with Frictionless Signup Forms & Enrichment",
   "main": "index.js",
   "scripts": {
     "test": "node_modules/mocha/bin/mocha test/*",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gillesbertaux/fsu-os.git"
+    "url": "git+https://github.com/segmentio/frictionless-signup.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/gillesbertaux/fsu-os/issues"
+    "url": "https://github.com/segmentio/frictionless-signup/issues"
   },
-  "homepage": "https://github.com/gillesbertaux/fsu-os#readme",
+  "homepage": "https://segment.com/frictionless-signup",
   "devDependencies": {
     "browserify": "^13.1.1",
     "sinon": "^1.17.6",
