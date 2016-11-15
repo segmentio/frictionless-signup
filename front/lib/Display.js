@@ -92,6 +92,29 @@ Display.prototype.customMapper = function (key, value, selector) {
 }
 
 /*
+* Show the request demo section
+*/
+
+Display.prototype.show_request_demo = function () {
+	var selector = this.getSelectorWithName('requestDemoSection');
+	if (selector && selector.style) {
+		selector.style.display = 'inline';
+	}
+}
+
+/*
+* Hide the request demo section
+*/
+
+Display.prototype.hide_request_demo = function () {
+	var selector = this.getSelectorWithName('requestDemoSection');
+	if (selector && selector.style) {
+		selector.style.display = 'none';
+	}
+}
+
+
+/*
 * Set the field value according to mapper or if field is empty
 */
 

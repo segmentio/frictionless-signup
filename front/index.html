@@ -21,23 +21,25 @@ To customize the role select:
  -->
 
 <form action="">
-  <input type="email" frictionless="email">
+  <input type="email" frictionless="email" placeholder="enter an email">
   <input type="text" frictionless="person.name.givenName">
   <input type="text" frictionless="person.name.familyName">
   <input type="text" frictionless="person.name.fullName">
   <input type="text" frictionless="company.name">
   <input type="text" frictionless="company.domain">
   <input type="text" frictionless="company.metrics.employees" frictionless-mapping="customMappingSize">
-  <input type="checkbox" frictionless="company.tags" frictionless-mapping="requestADemo" value="demo"> Request a demo
-  <select frictionless="person.employment.role" frictionless-mapping="customMappingRole">
-    <option value="customer">Customer Success</option>
-    <option value="cmo">CMO</option>
-    <option value="ceo">CEO</option>
-	<option value="design">Design</option>
-	<option value="tech">Tech</option>
-	<option value="sales">Sales</option>
-	<option value="cto">CTO</option>
-  </select>
+	<div id="offer-demo" style="display: none;" frictionless="requestDemoSection">
+	  <input type="checkbox" frictionless="company.tags" frictionless-mapping="requestADemo" value="demo"> Request a demo
+	  <select frictionless="person.employment.role" frictionless-mapping="customMappingRole">
+	    <option value="customer">Customer Success</option>
+	    <option value="cmo">CMO</option>
+	    <option value="ceo">CEO</option>
+			<option value="design">Design</option>
+			<option value="tech">Tech</option>
+			<option value="sales">Sales</option>
+			<option value="cto">CTO</option>
+	  </select>
+	</div>
 </form>
 
 <!-- <script src="fsu.js"></script> -->
@@ -55,7 +57,10 @@ function requestADemo(val, selector) {
 
 function customMappingRole(val) {
 	var res = null;
-	if (val.includes('customer')) {
+	if (val == undefined) {
+		return res;
+	}
+	else if (val.includes('customer')) {
 		res = "customer";
 	}
 	else if (val.includes('design')) {
