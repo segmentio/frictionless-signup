@@ -13,7 +13,7 @@ The purpose of Frictionless Signup is to reduce the amount of effort in submitti
 You can see the form in action [here](#).
 
 ## Prerequisites
-You will need a [Segment account](https://segment.com/signup), a [Clearbit account](https://dashboard.clearbit.com/signup), and a [Madkudu account](app.madkudu.com/signup?plan=frictionless) for this.
+You will need a [Segment account](https://segment.com/signup), a [Clearbit account](https://dashboard.clearbit.com/signup), and a [Madkudu account](https://app.madkudu.com/signup?plan=frictionless) for this.
 
 We also advise reading this How-To Guide as a more complete walkthrough of this project at Segment.
 
