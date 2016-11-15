@@ -17,17 +17,26 @@ You will need a Segment account, a Clearbit account, and a Madkudu account for t
 
 We also advise reading this How-To Guide as a more complete walkthrough of this project at Segment.
 
-
-## Installation instructions
+## How it works
 **Step 1:** Accept an Email Address
 
-**Step 2:** Listen for changes to email form field JavaScript to Listen for Email Field Changes 
+**Step 2:** Listen for changes to email form field JavaScript to Listen for Email Field Changes
 
 **Step 3:** HTTP request to the server with the email address
 
 **Step 4:** Query the Clearbit API with the email address
 
 **Step 5:** Prefill remaining form fields with response payload from Clearbit
+
+# How to run locally
+
+1. In a terminal, go to 'backend' directory and run `npm install` there.
+2. Run `CLEARBIT_API_KEY=xxx MADKUDU_API_KEY=yyy node app.js` and keep this terminal open: you're now running a proxy server running on local using port 3000. It will relay the calls from your webpage to Clearbit and MadKudu's API services.
+3. Open another terminal, go to the 'front' directory, and do a `npm install`.
+4. Run `node node_modules/browserify/bin/cmd.js index.js -o bundle.js` to assemble a `bundle.js` file which will be used in the demo html page.
+5. Open `index.html` in your file browser to open the webpage.
+6. Type an email address in the first field.
+7. You will see the form automatically filled up!
 
 
 ## Example of Clearbit API response for email enrichment
