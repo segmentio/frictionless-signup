@@ -4,7 +4,8 @@
   "description": "Increase conversion rates by 20%+ across your signup forms with Frictionless Signup Forms & Enrichment",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "npm test",
+    "start": "node index.js"
   },
   "author": "Yanael Barbier",
   "license": "ISC",
