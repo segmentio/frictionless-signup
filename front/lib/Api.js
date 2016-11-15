@@ -1,3 +1,5 @@
+const CLEARBIT_ENRICHMENT_API_URL = 'http://localhost:3000/clearbit/';
+const MADKUDU_PREDICTION_API_URL = 'http://localhost:3000/madkudu/predict';
 
 var Api = function () {
 
@@ -7,7 +9,7 @@ Api.prototype.callServer = function (email, callback) {
 
 	console.log('Call Server');
 	var request = new XMLHttpRequest();
-	var url = 'http://localhost:3000/clearbit/' + email
+	var url = CLEARBIT_ENRICHMENT_API_URL + email
 	var params = '';
 
 	request.open('GET', url, true);
@@ -39,7 +41,6 @@ Api.prototype.callSegment = function () {
 }
 
 Api.prototype.callMadKudu = function (lead_information, callback) {
-	const MADKUDU_PREDICTION_API_URL = 'http://localhost:3000/madkudu/predict';
 
 	console.log('Call MadKudu API');
 	var request = new XMLHttpRequest();
