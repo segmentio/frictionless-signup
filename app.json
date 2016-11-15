@@ -1,9 +1,9 @@
 {
     "name": "Friction Less Signup Backend",
     "description": "An API to call clearbit an return the payload",
-    "repository": "https://github.com/st3w4r/frictionless-signup/tree/backend",
+    "repository": "https://github.com/segmentio/frictionless-signup",
     "logo": "https://s3-us-west-2.amazonaws.com/segment-app-staging-assets/app/3.114.0-138-gc249e5a/logos/segment-icon.svg",
-    "website": "https://segment.com/frictionless-signup#getstarted",
+    "website": "https://segment.com/frictionless-signup",
     "keywords": [
         "frictionless",
         "signup",
@@ -28,7 +28,7 @@
         },
         "DOMAIN": {
             "description": "Your domain where the frictionless will be use",
-            "required": true
+            "required": false
         }
     }
 }
