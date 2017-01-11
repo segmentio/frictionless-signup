@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var router = require('./backend/router');
-var port = process.env.PORT || 80;
+var port = process.env.PORT || 3000;
 var domains = process.env.DOMAINS || '*'
 
 app.use(function (req, res, next) {

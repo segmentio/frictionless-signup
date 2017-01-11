@@ -30,12 +30,12 @@ We also advise reading this How-To Guide as a more complete walkthrough of this 
 
 ## How to run locally
 1. In a terminal, go to 'backend' directory and run `npm install` there.
-2. Run `CLEARBIT_API_KEY=xxx MADKUDU_API_KEY=yyy node app.js` and keep this terminal open: you're now running a proxy server running on local using port 3000. It will relay the calls from your webpage to Clearbit and MadKudu's API services.
+2. Go back to the root of the project and run `SEGMENT_API_KEY=xxx CLEARBIT_API_KEY=xxx MADKUDU_API_KEY=yyy node index.js`. Keep this terminal open: you're now running a proxy server running on local using port 3000. It will relay the calls from your webpage to Clearbit and MadKudu's API services.
 3. Open another terminal, go to the 'front' directory, and do a `npm install`.
-4. Run `node node_modules/browserify/bin/cmd.js index.js -o bundle.js` to assemble a `bundle.js` file which will be used in the demo html page.
-5. Open `index.html` in your file browser to open the webpage.
-6. Type an email address in the first field.
-7. You will see the form automatically filled up!
+4. Run `grunt` to assemble a `bundle.min.js` and a `bundle.js` files which will be used in the demo html page.
+5. Still in the front folder open `index.html` in your file browser to open the webpage.
+6. Type an email address in the first field (for instance alex@uber.com).
+7. You will see the form automatically filled up! 
 
 # API Backend
 

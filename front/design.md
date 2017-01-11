@@ -1,15 +1,16 @@
+# Features
+
+- Prefill the email address in the form if exist in url parameter and call Clearbit
+- Invalidate the data with boolean if the fields change
+- Get email from URL
+- When the user unfocused the email field made a new call
+- Add a request demo button if prospect is interesting
+
 # Installation
 
 Run `npm install`
-Run `npm install -g browserify`
-
-Add `<script src="bundle.js"></script>` on `index.html`
-
-Run `browserify index.js -o bundle.js` to compile a new `bundle.js`.
 
 # HTML Side
-
-Add on the input field `frictionless="email"`
 
 Mapping Clearbit data on HTML side
 	`person.email`
@@ -52,16 +53,9 @@ Gestion:
 
 # Events
 
-	set an event on all fields, emit an event when focus out
-	throw error if email is not valid
-	throw error if an account already exist
-	send event if data was modified per the user
-	send event if the data was prefilled correctly
-	send event with email address
-
-# Features
-
-- Prefill the email address in the form if exist in url parameter and call Clearbit
-- Invalidate the data with boolean if the fields change
-- Get email from URL
-- When the user unfocused the email field
+	- set an event on all fields, emit an event when focus out
+	- throw error if email is not valid
+	- throw error if an account already exist
+	- send event if data was modified per the user
+	- send event if the data was prefilled correctly
+	- send event with email address
